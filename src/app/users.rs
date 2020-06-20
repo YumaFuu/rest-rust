@@ -1,19 +1,11 @@
-use self::schema::{follows, posts, users};
 use rocket_contrib::json::Json;
-use serde::{Deserialize, Serialize};
+
+use crate::domain::users::*;
 
 #[get("/", format = "application/json")]
 pub fn index() -> &'static str {
-    let users = users.all().get_result::<User>(&cn)?;
+    // let users = users.all().get_result::<User>(&cn)?;
     "hoge"
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct User {
-    name: String,
-    email: String,
-    password: String,
-    password_confirm: String,
 }
 
 #[post("/", format = "application/json", data = "<user>")]

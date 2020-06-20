@@ -7,14 +7,11 @@ extern crate dotenv;
 extern crate rocket_contrib;
 extern crate serde_derive;
 
-mod handlers;
+mod app;
 
 fn main() {
     rocket::ignite()
-        .mount("/", routes![handlers::posts::index])
-        .mount(
-            "/users",
-            routes![handlers::users::index, handlers::users::create],
-        )
+        .mount("/", routes![app::posts::index])
+        .mount("/users", routes![app::users::index, app::users::create])
         .launch();
 }
