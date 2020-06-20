@@ -1,12 +1,12 @@
-pub mod follows;
+// pub mod follows;
 pub mod posts;
 pub mod users;
 
 use diesel::mysql::MysqlConnection;
 use diesel::prelude::*;
 use dotenv::dotenv;
+// use schema::{follows, posts, users};
 use std::env;
-use schema::{users, posts, follows}
 
 pub fn establish_connection() -> MysqlConnection {
     dotenv().ok();

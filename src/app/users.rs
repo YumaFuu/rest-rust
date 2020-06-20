@@ -1,6 +1,5 @@
+use crate::domain::users::models::*;
 use rocket_contrib::json::Json;
-
-use crate::domain::users::*;
 
 #[get("/", format = "application/json")]
 pub fn index() -> &'static str {

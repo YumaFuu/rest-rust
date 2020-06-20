@@ -8,6 +8,7 @@ extern crate rocket_contrib;
 extern crate serde_derive;
 
 mod app;
+mod domain;
 
 fn main() {
     rocket::ignite()

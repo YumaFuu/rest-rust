@@ -1,7 +1,9 @@
-#[derive(Serialize, Deserialize, Identifiable, Queryable, PartialEq, Debug)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Deserialize, Serialize)]
 pub struct User {
     pub id: u32,
-    pub name: &str,
-    pub email: &str,
-    pub password_digest: &str,
+    pub name: String,
+    pub email: String,
+    pub password_digest: String,
 }
